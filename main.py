@@ -30,3 +30,5 @@ while game_on:
     #hitting up and down wall
     if ball.ycor()==280 or ball.ycor()==-280:
         ball.bounce()
+
+print('ok')
