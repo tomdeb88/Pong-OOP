@@ -31,4 +31,9 @@ while game_on:
     if ball.ycor()==280 or ball.ycor()==-280:
         ball.bounce()
 
-print('ok')
+    #contact if paddle
+    if ball.xcor()>320 and ball.distance(right_paddle)<50 or ball.xcor()<-320 and ball.distance(left_paddle)<50:
+        ball.hitting_paddle()
+    if ball.xcor() < -340 or ball.xcor() > 340:
+        print('score')
+
