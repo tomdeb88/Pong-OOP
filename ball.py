@@ -19,3 +19,7 @@ class Ball(Turtle):
 
     def hitting_paddle(self):
         self.x_value*=-1
+
+    def missed(self):
+        self.goto(0,0)
+        self.x_value *= -1
