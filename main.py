@@ -18,14 +18,16 @@ ball=Ball()
 score=Score()
 
 
+
 screen.onkey(right_paddle.move_up,'Up')
 screen.onkey(right_paddle.move_down,'Down')
 screen.onkey(left_paddle.move_up,'w')
 screen.onkey(left_paddle.move_down,'s')
 
 game_on=True
+
 while game_on:
-    time.sleep(0.03)
+    time.sleep(ball.ball_speed)
     screen.update()
     ball.move()
 
@@ -33,9 +35,10 @@ while game_on:
     if ball.ycor()==270 or ball.ycor()==-270:
         ball.bounce()
 
-    #contact if paddle
+    #contact with paddle
     if ball.xcor()>320 and ball.distance(right_paddle)<50 or ball.xcor()<-320 and ball.distance(left_paddle)<50:
         ball.hitting_paddle()
+
 
     #missed ball by left paddle
     if ball.xcor() < -380:
@@ -46,6 +49,8 @@ while game_on:
     if ball.xcor() > 380:
         ball.missed()
         score.left_scoring()
+
+    print(ball.ball_speed)
 
 
 

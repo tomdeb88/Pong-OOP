@@ -8,6 +8,7 @@ class Ball(Turtle):
         self.penup()
         self.x_value=10
         self.y_value=10
+        self.ball_speed=0.04
 
     def move(self):
         x_pos=self.xcor()+self.x_value
@@ -19,7 +20,9 @@ class Ball(Turtle):
 
     def hitting_paddle(self):
         self.x_value*=-1
+        self.ball_speed*=0.95
 
     def missed(self):
         self.goto(0,0)
         self.x_value *= -1
+        self.ball_speed=0.04
